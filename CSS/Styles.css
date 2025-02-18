@@ -16,7 +16,7 @@ body {
 
 }
 button {
-    backgroup:  #007bff;
+    background:  #007bff;
     color: white;
     border: none;
     padding: 10px 15px; /*10px superior e inferior e 15px é direita e esquerda*/
