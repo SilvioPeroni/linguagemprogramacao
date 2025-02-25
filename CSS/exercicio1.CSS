@@ -5,9 +5,10 @@ form{
 label {
     display: flex;
     margin-top: 10px;
-
 }
 input {
     margin-top: 5px;
-    
+}
+button {
+    margin-top: 10px; 
 }
