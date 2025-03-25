@@ -135,3 +135,68 @@ function exe1(){
             document.getElementById("novo").innerHTML = `Novo salario ${novosalario}`
         }
     }
+    function exe9(){
+        // recuperação de valores
+        let saldomedio = Number(document.getElementById("saldomedio").value)
+        if (saldomedio > 400) {
+            document.getElementById("valorcredito").innerHTML = saldomedio * 0.3
+        }
+        else if ((saldomedio > 300) && (saldomedio <= 400)){
+            document.getElementById("valorcredito").innerHTML = saldomedio * 0.25
+        }
+        else if ((saldomedio > 200) && (saldomedio <= 300)){
+            document.getElementById("valorcredito").innerHTML = saldomedio * 0.2
+        }
+        else if (saldomedio <= 200){}
+            document.getElementById("valorcredito").innerHTML = saldomedio * 0.1
+        }
+    }
+    function exe9'(){
+        // recuperação de valores
+        let saldomedio = Number(document.getElementById("saldomedio").value)
+        // calcular o credito
+        let valorcredito = 0  // inicializar com zero
+        if (saldomedio > 400) {
+            valorcredito = saldomedio * 0.3
+        }
+        else if ((saldomedio > 300) && (saldomedio <= 400)){
+            valorcredito = saldomedio * 0.25
+        }
+        else if ((saldomedio > 200) && (saldomedio <= 300)){
+            valorcredito = saldomedio * 0.2
+        }
+        else if ((saldomedio > ) && (saldomedio <= 200)){
+            valorcredito = saldomedio * 0.1
+        }
+        else { //saldomedio negativo
+            document.getElementById("valorcredito").innerHTML="saldomedio negativo"
+            return  // saiu da função  
+        }
+        document.getElementById("valorcredito").innerHTML = `saldomedio ${saldomedio} e crédito ${credito}`
+
+      function exe10(){
+        // recuperação de valores
+        let custo = Number(document.getElementById("custo").value)
+        let distribuidor = 0
+        let imposto = 0
+        if (custo >= 0 && custo < 12000){
+            distribuidor = custo * 0.05
+            imposto = 0
+        }
+        else if (custo >= 12000 && custo <= 25000){
+            distribuidor = custo * 0.1
+            imposto = custo * 0.15
+        }
+        else if (custo > 25000){
+            distribuidor = custo * 0.15
+            imposto = custo * 0.2
+        }
+        else {
+            document.getElementById("consumidor").innerHTML = "custo negativo"
+            return // sai da função
+        }
+        let consumidor = custo + distribuidor + imposto
+        document.getElementById("consumidor").innerHTML = `custo da fabrica ${custo} <br/>
+        Distribuidor ${ distribuidor} <br/> Imposto ${imposto} <br/> valor consumidor ${consumidor}`
+        // fecha função
+      }
