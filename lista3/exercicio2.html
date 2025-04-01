@@ -5,8 +5,9 @@
         <meta charset="UTF-8"/>
         <!-- a largura da página será a largura do dispositivo --> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title> Lista 3</title>
+        <title>Exercício 2</title>
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/exercicio1.css">
         <script src="js/scripts.js"> </script>   
     </head>
     <body>
@@ -28,10 +29,23 @@
         </div>
         <div class="container">
             <div class="card">
-                <img class="image" src="https://placehold.co/150" alt="Foto do perfil"/>
-                <h2> Daniel Pires </h2>
-                <p> Análise e Desenvolvimento de Sistemas </p>
-                <button onclick="seguir()"> Seguir </button>
+                <h1> Exercício 2 </h1>
+                <form>
+                    
+                    <button onclick="exe2()" type="button"> Calcular </button>
+                    <table border  = "1">
+                        <thead>
+                            <tr> <!--table-->
+                                <td> Preco </td> <!--table data-->
+                                <td> quantidade</td>
+                                <td> Despesa</td>
+                                <td> Lucro</td>
+                            </tr>
+                        </thead>
+                            <tbody id ="tabela"> 
+                            </tbody>
+                    </table>
+                </form>
             </div>
         </div>
     </body>

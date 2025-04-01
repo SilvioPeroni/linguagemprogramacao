@@ -200,3 +200,8 @@ function exe1(){
         Distribuidor ${ distribuidor} <br/> Imposto ${imposto} <br/> valor consumidor ${consumidor}`
         // fecha função
       }
+      function exe22(){
+        // recuperação de valores
+        let idade = Number(document.getElementById("idade").value)
+        let peso = Number(document.getElementById("peso").value)
+        let risco
