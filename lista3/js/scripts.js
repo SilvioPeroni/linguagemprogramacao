@@ -79,15 +79,35 @@ function exe4(){
         resultado +=`${numero} * ${i} = ${numero * i} <br/>`
    
     document.getElementById("resultado").innerHTML = resultado
+    }
 }
 
-}function exe5(){
+function exe5(){
     let resultado = ""
     for(let numero = 1; numero <= 10; numero++){
         resultado += `Tabuada do ${numero} <br/>`
-        for(let i = 0; i <= 10; i++)
-            resultado += ${numero} * ${i} = ${numero*i} <br/>
+        for(let i = 0; i <= 10; i++){
+            resultado += `${numero} * ${i} = ${numero*i} <br/>`
+         }
     }
-} 
-  document.getElementById("resultado2").innerHTML = resultado
+   document.getElementById("resultado2").innerHTML = resultado
+}
+
+function exe6(){
+    let codigo, valor, totalVista = 0, totalPrazo = 0
+    for (let i = 1; i <= 5; i++){
+        do {
+    codigo = prompt(`Digite V (à vista) ou P (à prazo)`).toUpperCase()
+        }
+        while (codigo != 'V'  && codigo != 'P')
+       valor = Number(prompt(`Digite o valor da transação`)) 
+       if (codigo == 'V'){
+        totalVista += valor
+       } 
+       else {
+        totalPrazo += valor
+       }
+    }
+    document.getElementById("resultado").innerHTML =`Total à Vista ${totalvista}
+     $ Total à prazo ${TotalPrazo} e total geral ${totalPrazo +totalVista}`
 }
