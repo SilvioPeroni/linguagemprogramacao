@@ -136,3 +136,40 @@ function exe7(){
         item 2 ${somaAltura / idade10e20} <br/> Item 3 ${peso40}`
     
 }
+function exe8(){
+    // declaração de variaveis
+    let idade, altura, peso, olhos,cabelos
+    let idade50Peso60 = 0, somaIdade = 0, qtdeAltura150 = 0
+    let qtdeAzuis = 0, cabelosRuivo = 0
+    // entrada e processamento dos dados
+    for(let i=1;i <=3;i++){
+        idade = Number(prompt(`Informe idade ${i}`))
+        altura = Number(prompt(`Informe altura ${i}`))
+        peso = Number(prompt(`Informe peso ${i}`))
+        do {
+            cabelos = prompt (`Informe cor dos cabelos`).toUpperCase()
+        }
+        while (cabelos != 'p' && cabelos != 'c' && cabelos != 'l' && cabelos != 'r')
+        
+        do {
+            olhos = prompt (`Informe cor dos olhos`).toUpperCase()
+        }
+        while (olhos != 'A' && olhos != 'P' && olhos != 'V' && olhos != 'C')
+          // processamento
+        if (idade > 50 && peso < 60){
+            idade50Peso60++
+        } 
+        if (altura < 1.50){
+            somaIdade += idade
+            qtdeAltura150++
+        }
+        if (olhos == 'A'){
+            qtdeAzuis++
+        }
+        if (cabelos == 'r' && olhos != 'A'){
+            cabelosRuivo++
+        }
+    }
+    document.getElementById("resultado").innerHTML = `Item 1 ${idade50Peso60} 
+    Item 2 ${soma/qtdeAltura150} Item 3 ${qtdeAzuis} Item 4 ${qtdeRuivo} `
+}
