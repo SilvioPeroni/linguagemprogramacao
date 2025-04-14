@@ -128,7 +128,7 @@ function exe7(){
             idade10e20++ // conta as pessoas com idade entre 10 e 20
             somaAltura += altura
         }
-        if (peso > 40) { // item 3
+        if (peso > 40) { //  item 3
             peso40++
         }
     }
