@@ -173,3 +173,79 @@ function exe8(){
     document.getElementById("resultado").innerHTML = `Item 1 ${idade50Peso60} 
     Item 2 ${soma/qtdeAltura150} Item 3 ${qtdeAzuis} Item 4 ${qtdeRuivo} `
 }
+
+// Exercício 9
+function exe9() {
+    let somaIdades = 0;
+    let pesoAlturaCondicao = 0;
+    let idadeEntre10e30_comMaisDe190 = 0;
+    let totalMaisDe190 = 0;
+
+    for (let i = 1; i <= 10; i++) {
+        let idade = Number(prompt(`Informe a idade da pessoa ${i}:`));
+        let peso = Number(prompt(`Informe o peso da pessoa ${i} (em kg):`));
+        let altura = Number(prompt(`Informe a altura da pessoa ${i} (em metros):`));
+
+        // Soma de idades para a média
+        somaIdades += idade;
+
+        // Condição 2: peso > 90kg e altura < 1.50m
+        if (peso > 90 && altura < 1.50) {
+            pesoAlturaCondicao++;
+        }
+
+        // Condição 3: idade entre 10 e 30 com altura > 1.90
+        if (altura > 1.90) {
+            totalMaisDe190++;
+            if (idade >= 10 && idade <= 30) {
+                idadeEntre10e30_comMaisDe190++;
+            }
+        }
+    }
+
+    let mediaIdades = somaIdades / 10;
+    let porcentagem = (totalMaisDe190 > 0) 
+        ? (idadeEntre10e30_comMaisDe190 / totalMaisDe190) * 100 
+        : 0;
+
+    document.getElementById("resultado").innerHTML = `
+        Média das idades: ${mediaIdades.toFixed(2)}<br/>
+        Qtde peso > 90kg e altura < 1.50m: ${pesoAlturaCondicao}<br/>
+        % de pessoas com idade entre 10 e 30 anos com altura > 1.90m: ${porcentagem.toFixed(2)}%
+    `;
+}
+************************************************************************************************************************************
+// exercício10: Somar pares e primos
+function exe10() {
+    let somaPares = 0;
+    let somaPrimos = 0;
+
+    // Função auxiliar para verificar se é primo
+    function ehPrimo(num) {
+        if (num <= 1) return false;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) return false;
+        }
+        return true;
+    }
+
+    for (let i = 1; i <= 10; i++) {
+        let numero = Number(prompt(`Informe o número ${i}:`));
+
+        // Soma dos pares
+        if (numero % 2 === 0) {
+            somaPares += numero;
+        }
+
+        // Soma dos primos
+        if (ehPrimo(numero)) {
+            somaPrimos += numero;
+        }
+    }
+
+    // Exibe os resultados
+    document.getElementById("resultado").innerHTML = `
+        Soma dos números pares: ${somaPares} <br/>
+        Soma dos números primos: ${somaPrimos}
+    `;
+}
