@@ -233,10 +233,26 @@ function exe9(){
 
 function exe10(){
     let vetor1 = [], vetor2 =[]
+    let vetorr1 =[], vetorr2 = []
+    // entrada de dados
     for (i =0;i < 10;i++){
-        let soma1
-        if(vetor1 % 2 == 0){
-            soma1 += vetor1
+        vetor1.push(Number(prompt(`informe o ${i+1}o. elemento vetor 1`)))
+    }
+    for (i=0;i<5;i++){
+        vetor2.push(Number(prompt(`informe o ${i+1}o. elemento vetor 2`)))
+    }
+        // calcular o vetor resultante 1
+        // calcular a soma dos elementos do vetor2
+        let somavet2 = 0
+        for (i=0;i<5;i++){
+            somavet2 += vetor2[i]
         }
+        // cria o vetor resultante 1
+        for (i=0;i<10;i++){
+            if (vetor1[i] % 2 == 0){
+                vetorr1.push(vetor1[i] + somavet2)
+            }
+        }    
+        alert(`vetor resultante 1 ${vetorr1}`)
     }
 }
