@@ -179,3 +179,64 @@ function exe7(){
     }
     alert(`Contagem de negativos ${conta}3 soma dos positivos ${soma}`)
 }
+
+function exe8(){
+    let nomes = [], medias = []
+    for(let i=0; i<7;i++){
+        nomes.push(prompt(`Informe nome do aluno ${i + 1}`))
+        medias.push(Number(prompt(`Informe média do aluno ${i+1}`)))
+    }
+    // calcular a maior media
+    let maior = media [0]
+    for( i=1; i< 7;i++){
+        if (medias[i] > maior){
+            maior =medias[i]
+        }
+    }
+    // nome do aluno com maior media
+    let pos = medias.indexOf(maior)
+    alert(`nome do aluno com maior media ${maior} é ${nomes[pos]}`)
+    // calcular a nota necessaria no exame final
+    for(let i =0; i<6;i++){  // percorre o vetor
+        if (media[i] < 7){  // ficou para exame
+            // nota necessaria sabendo que media deve ser minimo 5
+            alert(`${nomes[i]} precisa tirar ${10 - media[i]}`)
+        }
+    }
+}
+
+function exe9(){
+    let nomes = [], codigos = []; precos = []
+    for(let i =0;i<10;i++){
+        nomes.push(prompt(`Informe nome do produto ${i + 1}`))
+        codigos.push(Number(prompt(`Informe codigo do produto ${i+1}`)))
+        precos.push(Number(prompt(`Informa o preco do produto ${i + 1}`)))
+        }
+        // gerar relatorio com novos preços
+        for(i =0;i<10;i++){
+            let novo
+            if(codigos[i] % 2 == 0 && preco[i] > 1000){
+                novo = precos[i] + preco[i]*20/100
+            }
+            else if (codigos[i] % 2 == 0){
+                novo = precos[i] + precos[i] * 15/100
+            }
+            else if (precos[i] > 1000){
+                novo = precos[i] + precos[i] * 10/100
+            }
+            else{
+                novo = precos[i]
+            }
+            alert(`${nomes[i]} - ${codigos[i]} - ${precos[i]} - ${novo}`)
+        }
+}
+
+function exe10(){
+    let vetor1 = [], vetor2 =[]
+    for (i =0;i < 10;i++){
+        let soma1
+        if(vetor1 % 2 == 0){
+            soma1 += vetor1
+        }
+    }
+}
