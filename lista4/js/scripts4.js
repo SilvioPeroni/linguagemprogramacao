@@ -254,5 +254,17 @@ function exe10(){
             }
         }    
         alert(`vetor resultante 1 ${vetorr1}`)
+        // calcular vetor resultante 2
+        for (let i=0; i< 10;i++){//para cada elemento do vetor1 
+            if ( vetor1[i] % 2 == 1) { // verificar se elemento é impar
+                let qtdeDivisores = 0
+                for (j=0;j<5;j++){// para cada elemento 
+                    if (vetor1[i] % 2 j == 0){ // encontrou um divisor
+                        qtdeDivisores++  // conta +1 nos divisores
+                    }
+            }
+            vetorr2.push(qtdeDivisores) // adiciona contador ao vetor 2
+        }
     }
+    alert(`Vetor resultante 2 ${vetorr2}`)
 }
