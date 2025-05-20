@@ -53,17 +53,14 @@ function exe6(){
     let i
     for(i = 0; i < 10; i++){
         let objeto ={
-            nome: prompt(`Informe o nome`),
-            venda: Number(prompt(`Informe a venda`)),
-            percentual: Number(prompt(`Informe o percentual`)),
-            comissao: Number(prompt(`Informe a comissão`))
+            nome: prompt(`informe o nome ${i+1}o. vendedor`),
+            venda: Number(prompt(`informe total vendas ${i+1}o. vendedor`)),
+            percentual: Number(prompt(`informe o percentual ${i+1}o. vendedor`))
         }
-        for (i=0;i<10;i++){
-        nome.push(prompt(`informe o nome ${i+1}o. vendedor`))
-        venda.push(Number(prompt(`informe total vendas ${i+1}o. vendedor`)))
-        percentual.push(Number(prompt(`informe o percentual ${i+1}o. vendedor`)))
-        // calcular a comissao
-        comissao.push((venda[i] * percentual [i])/100)
+        // calcular a comissão
+        objeto.comissao = (objeto.venda * objeto.percentual) / 100
+        // adicionar o objeto no vetor
+        vetor.push(objeto)
     }
     // relação dos vendedores e os valores a receber
     let relatorio = ''
