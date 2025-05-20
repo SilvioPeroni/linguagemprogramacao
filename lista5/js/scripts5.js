@@ -57,36 +57,63 @@ function exe6(){
             venda: Number(prompt(`informe total vendas ${i+1}o. vendedor`)),
             percentual: Number(prompt(`informe o percentual ${i+1}o. vendedor`))
         }
-        // calcular a comissão
+        // calcular a comissão - vamos utilizar 0 . para acessar o campo/ atributo do objeto
         objeto.comissao = (objeto.venda * objeto.percentual) / 100
         // adicionar o objeto no vetor
         vetor.push(objeto)
-    }
+    } // fecha o for
     // relação dos vendedores e os valores a receber
     let relatorio = ''
     for(let i =0; i < 10;i++){
-        relatorio +=`\nVendedor: ${nomes[i]}vai receber ${comissao[i]}`
+        relatorio +=`\nVendedor: ${vetor[i].nome}vai receber ${vetor[i].comissao}`
     } 
     alert(relatorio)
     //total das vendas de todos os vendedores
     let somaVendas = 0
     for(let i =0; i < 10;i++){
-        somaVendas = somaVendas + vendas[i]
+        somaVendas = somaVendas + vetor[i].venda
     }
     alert(`Total de vendas ${somaVendas.toFixed(2)}`)
     // maior e menor valor a receber e nome
-    let maior =  comissao [0] // primeiro é o maior
-    let menor =  comissao [0]  // o segundo é o menor]
+    let ObjetoMaior = vetor [0] // primeiro funcionario é o maior
+    let ObjetoMenor = vetor [0]  // primeiro funcionario é o menor]
     for(let i =0; i < 10;i++){
-        if (comissao[i] > maior){
-            maior = comissao [i]
+        if (vetor[i].comissao > ObjetoMaior.comissao){
+            ObjetoMaior = vetor[i]
         }
-        if (comissao[i] > menor){
-            menor = comissao[i]    
+        if (vetor[i].comissao > ObjetoMenor.comissao){
+            ObjetoMenor = vetor[i]   
         }
      }
-     let iMaior = comissao.indexOf(maior) // posição do maior
-     alert (`${nomes[iMaior]} vai receber maior comissao de ${maior}`)
-     let iMenor = comissao.indexOf(menor) // posição do menor
-     alert (`${nomes[iMenor]} vai receber maior comissao de ${menor}`)
+     alert (`${ObjetoMaior.nome} vai receber maior comissao de ${ObjetoMaior.comissao}`)
+     alert (`${ObjetoMenor.nome}} vai receber maior comissao de ${ObjetoMenor.comissao}`)
+}
+function exe9(){
+    let vetor = []
+    let i
+    for(i = 0; i < 10; i++){
+        let objeto ={
+            nome: prompt(`Informe nome do produto ${i + 1}`),
+            codigo: Number(prompt(`Informe codigo do produto ${i+1}`)),
+            preco: Number(prompt(`Informa o preco do produto ${i + 1}`)),
+            novo : 0 
+        }
+        vetor.push(objeto)
+    }
+        // gerar relatorio com novos preços
+        for(i =0;i<10;i++){
+            if(vetor[i].codigo % 2 == 0 && vetor[i].preco > 1000){
+                vetor[i].novo = vetor[i].preco + vetor[i].preco *20/100
+            }
+            else if (vetor[i].codigo % 2 == 0){
+                vetor[i].novo = vetor[i].preco + vetor[i].precos * 15/100
+            }
+            else if (vetor[i].preco[i] > 1000){
+                vetor[i].novo = vetor[i].precos + vetor[i].precos * 10/100
+            }
+            else{
+                vetor[i].novo = vetor[i].precos
+            }
+            alert(`${vetor[i].nome} - ${vetor[i].codigo} - ${vetor[i].precos} - ${vetor[i].novo}`)
+        }
 }
