@@ -8,7 +8,7 @@ function saida(va){
     alert(va)
 }
 function main(){
-    let a - 10
+    let a = 10
     // passando um numero como parametro da funcao
     // va vai receber o valor de a (passagem de parametro por valor)
     entrada(a)

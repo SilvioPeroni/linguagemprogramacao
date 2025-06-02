@@ -259,7 +259,7 @@ function exe10(){
             if ( vetor1[i] % 2 == 1) { // verificar se elemento é impar
                 let qtdeDivisores = 0
                 for (j=0;j<5;j++){// para cada elemento 
-                    if (vetor1[i] % 2 j == 0){ // encontrou um divisor
+                    if (vetor1[i] % 2 (j == 0)){ // encontrou um divisor
                         qtdeDivisores++  // conta +1 nos divisores
                     }
             }
