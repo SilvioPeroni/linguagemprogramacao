@@ -49,14 +49,15 @@ function calcularVendasMenor1000(mat, vet){
     for(let i=0;i< 12;i++){
         let qtde = 0
          for(let j=0;j< 4;j++){
-                if(mat[i][j] > 1000){
+                if(mat[i][j] < 1000){
                     qtde++
                 }
          }
-         if (qtde > 0) {
+         if (qtde > 0){
             alert(`Em ${vet[i]}teve ${qtde} vendas menores que R$1.000,00')
-        }
+         }
     }
+    
 }
             
 function exe5(){ 
@@ -67,6 +68,8 @@ function exe5(){
     calculaTotalMes(mat, vet)
     calcularTotalSemana(mat)
     calculaTotalAno(mat)
+    calcularVendasMaior5000(mat, vet)
+    calcularVendasMaior5000(mat, vet)
     alert(' Total vendido no ano ${calcularTotalAno(mat)}')
 }
 exe5()
