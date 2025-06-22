@@ -1,10 +1,10 @@
 // 1. Leitura dos dados
-function lerDados(nomes, pressao) {
+function lerDados(nomes, pressao){
     for (let i = 0; i < 3; i++) {
         nomes[i] = prompt(`Informe o nome do paciente ${i + 1}:`);
         pressao[i] = [];
         for (let j = 0; j < 4; j++) {
-            pressao[i][j] = parseFloat(prompt(`Informe a pressão sistólica de ${nomes[i]} no dia ${j + 1} (em mmHg):`));
+            pressao[i][j] = parseFloat(`prompt(Informe a pressão sistólica de ${nomes[i]} no dia ${j + 1} (em mmHg):`);
         }
     }
 }
@@ -69,11 +69,12 @@ function sistemaLaboratorio() {
     let saida = `Relatório do Laboratório:\n`;
     saida += `Paciente com maior média de pressão: ${nomeMaiorMedia}\n`;
     saida += `Total de medições acima de 14.0 mmHg: ${totalAcima}\n`;
-    saida += `Médias de pressão por dia:\n`;
+    saida +=`Médias de pressão por dia:\n`;
  
     for (let dia = 0; dia < mediasDia.length; dia++) {
-        saida += `- Dia ${dia + 1}: ${mediasDia[dia]} mmHg\n`;
+        saida += - `Dia ${dia + 1}: ${mediasDia[dia]} mmHg\n`;
     }
  
     alert(saida);
 }
+sistemaLaboratorio()
