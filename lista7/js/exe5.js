@@ -17,6 +17,28 @@ function calculaTotalMes (){
     }
 }
 function calcularTotalSemana(mat){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     for(let j=0;j<4;j++){
         let soma = 0 // vamos iniciar um nova semana
         for(let i=0;i< 12;i++){
