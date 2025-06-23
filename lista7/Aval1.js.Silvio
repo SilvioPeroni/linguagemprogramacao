@@ -1,0 +1,155 @@
+// Função para ler os dados de 5 pacientes via prompt()
+function lerPacientes(pacientes) {
+   for (let i = 0; i < 5; i++) {
+        let objeto = {
+            nome : prompt(`Informe o nome do paciente ${i + 1}:`),
+            diasInternados : Number(prompt(`Informe os dias internados de ${nome}:`)),
+            setor : prompt(`Informe a  (ex:enfermaria, UTI, em observação) de ${nome}:`).toLowerCase(),
+            temperatura : parseFloat(prompt(`Informe a temperatura de ${nome} (em °C):`))
+        }
+        pacientes.push(objeto);
+    }
+}
+// Função que retorna o nome do paciente com maior temperatura 
+function pacienteComMaiorTemperatura(pacientes) {
+    let maior = pacientes[0];
+    for (let i = 0; i < pacientes.length; i++) {
+        if (pacientes[i].temperatura > maior.temperatura) {
+            maior = pacientes[i];
+        }
+    }
+    return maior.nome;
+}
+ 
+// Função que retorna a quantidade de pacientes internados a dias  > 10 e temperatura > 37.5 
+function pacientesComMaiorTemperatura(pacientes) {
+    let contador = 0;
+    for (let i = 0; i < pacientes.length; i++) {
+        if (pacientes[i].diasInternados > 10 && pacientes[i].temperatura > 37.5) {
+            contador++;
+        }
+    }
+    return contador;
+}
+ 
+// Função que calcula a média de temperatura dos pacientes atendidos em "UTI"
+function mediaDiasInternadosUti(pacientes) {
+    let soma = 0;
+    let cont = 0;
+    for (let i = 0; i < pacientes.length; i++) {
+        if (pacientes[i].setor === "Uti") {
+            soma += pacientes[i].setor;
+            cont++;
+        }
+    }
+ 
+    if (cont === 0) {
+        return "Nenhum paciente na Uti.";
+    } else {
+        return (soma / cont).toFixed(2);
+    }
+}
+ 
+function sistemaClinica(){
+    let pacientes = []
+    lerPacientes(pacientes);
+ 
+    const nomeMaiortemperatura = pacienteComMaiorTemperatura(pacientes);
+    const qtdeAltaTemperstura = temperatura(pacientes);
+    const mediaDiasUti = mediaDiasUti(pacientes);
+    
+    const resultado = `
+        Paciente com maior temperatura = ${nomeMaiorTemperatura}
+        Quantidade de pacientes com mais de 10 dias e tempertura maior que 37.5°C: ${qtdeNomeTemperaturaAlta}
+        Média de dias internados setor Uti ${mediaDiasInternadosUti}
+    `
+    alert(resultado)
+}
+sistemaClinica()
+
+*******************************************************************************************
+
+                     //exerc 2
+
+// 1. Leitura dos dados
+function lerDados(nomes, glicose){
+    for (let i = 0; i < 3; i++) {
+        nomes[i] = prompt(`Informe o nome do paciente ${i + 1}:`);
+        glicose[i] = [];
+        for (let j = 0; j < 4; j++) {
+            glicose[i][j] = parseFloat(`prompt(Informe a glicose de ${nomes[i]} no dia ${j + 1} (em mmHg):`));
+        }
+    }
+}
+ 
+// 2. Paciente com maior média de glicose
+function pacienteMaiorMedia(nomes, glicose) {
+    let maiorMedia = 0;
+    let nomeMaior = "";
+ 
+    for (let i = 0; i < 3; i++) {
+        let soma = 0;
+        for (let j = 0; j < 4; j++) {
+            soma += glicose[i][j];
+        }
+        let media = soma / 4;
+ 
+        if (i === 0 || media > maiorMedia) {
+            maiorMedia = media;
+            nomeMaior = nomes[i];
+        }
+    }
+ 
+    return nomeMaior;
+}
+ 
+// 3. Número total de medições acima de 140
+function totalAcima140(glicose) {
+    let cont = 0;
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 4; j++) {
+            if (glicose[i][j] > 140) {
+                cont++;
+            }
+        }
+    }
+    return cont;
+}
+ 
+// 4. Média de glicose por dia (coluna)
+function mediaPorDia(glicose) {
+    let medias = [];
+    for (let j = 0; j < 4; j++) {
+        let soma = 0;
+        for (let i = 0; i < 3; i++) {
+            soma += gicose[i][j];
+        }
+        medias[j] = (soma / 3).toFixed(2);
+    }
+    return medias;
+}
+ 
+// Função principal
+function sistemaLaboratorio() {
+    let nomes = []; // vetor com os nomes dos 3 pacientes
+    let glicose = []; // matriz 3x4 para as medições
+    lerDados(nomes, glicose);
+ 
+    const nomeMaiorMedia = pacienteMaiorMedia(nomes, glicose);
+    const totalAcima = totalAcima140(glicose);
+    const mediasDia = mediaPorDia(glicose);
+ 
+    let saida = `Relatório do Laboratório:\n;
+    saida += Paciente com maior média de glicose: ${nomeMaiorMedia}\n;
+    saida += Total de medições acima de 140 mg/dl: ${totalAcima}\n;
+    saida += Médias de glicose por dia:\n;
+    `
+    for (let dia = 0; dia < mediasDia.length; dia++) {
+        saida += - `Dia ${dia + 1}: ${mediasDia[dia]} mg/dl\n`;
+    }
+ 
+    alert(saida);
+}
+sistemaLaboratorio()
+    
+ 
