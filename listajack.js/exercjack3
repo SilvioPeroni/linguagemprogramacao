@@ -1,0 +1,35 @@
+function Moda(vetNumeros) {
+    
+    if (!vetNumeros || vetNumeros.length === 0) {
+        return "Vetor vazio, moda não existe";
+    }
+
+    const contFrequencia = {};
+
+    vetNumeros.forEach(numero => {
+        contFrequencia[numero] = (contFrequencia[numero] || 0) + 1;});
+
+    let frequenciaMaxima = 0;
+    for (const numero in contFrequencia) {
+        if (contFrequencia[numero] > frequenciaMaxima) {
+            frequenciaMaxima = contagemFrequencia[numero];
+        }
+    }
+
+    const modas = [];
+    for (const numero in contFrequencia) {
+        if (contFrequencia[numero] === freqMaxima) {
+            modas.push(Number(numero));
+        }
+    }
+        
+    if (freqMaxima === 1 && modas.length === vetNumeros.length) {
+      return "Moda não existe";
+    }
+   
+    if (modas.length > 1) {
+        return "Moda não existe";
+    }
+        
+    return modas[0];
+}

@@ -1,0 +1,58 @@
+vetor = [];
+
+function inserirElementos() {
+
+    let quant = parseInt(prompt("Quantos elementos deseja inserir?"));
+    for (let i = 0; i < quant; i++) {
+        let num = parseInt(`prompt(Digite o elemento ${i + 1})`);
+        vetor.push(num);
+    }
+}
+// a) Quantidade de números negativos
+function contarNegativos() {
+    return vetor.filter(num => num < 0).length;
+}
+// b) Média dos números pares
+function mediaPares() {
+    let pares = vetor.filter(num => num % 2 === 0);
+    if (pares.length === 0) return 0;
+    let soma = pares.reduce((acc, num) => acc + num, 0);
+    return soma / pares.length;
+}
+// c) Soma dos múltiplos de 3 ou 5
+function somaMultiplos() {
+    return vetor.reduce((acc, num) => (num % 3 === 0 || num % 5 === 0) ? acc + num : acc, 0);
+}
+// d) Lista de números ímpares
+function listarImpares() {
+    return vetor.filter(num => num % 2 !== 0);
+}
+// e) Menor elemento
+function menorElemento() {
+    return Math.min(...vetor);
+}
+// f) Posição do maior elemento
+function posicaoMaior() {
+    let max = Math.max(...vetor);
+    return vetor.indexOf(max);
+}
+// g) Verificar se há números repetidos
+function existemRepetidos() {
+    let set = new Set(vetor);
+    return set.size !== vetor.length;
+}
+// h) Remover números repetidos
+function removerRepetidos() {
+    vetor = [...new Set(vetor)];
+}
+// Principal
+inserirElementos();
+console.log("Quantidade de negativos:", contarNegativos());
+console.log("Média dos pares:", mediaPares());
+console.log("Soma dos múltiplos de 3 ou 5:", somaMultiplos());
+console.log("Números ímpares:", listarImpares());
+console.log("Menor elemento:", menorElemento());
+console.log("Posição do maior elemento:", posicaoMaior());
+console.log("Existem números repetidos?", existemRepetidos());
+removerRepetidos();
+console.log("Vetor após remover")
