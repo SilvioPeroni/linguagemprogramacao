@@ -12,18 +12,18 @@ function Moda(vetNumeros) {
     let frequenciaMaxima = 0;
     for (const numero in contFrequencia) {
         if (contFrequencia[numero] > frequenciaMaxima) {
-            frequenciaMaxima = contagemFrequencia[numero];
+            frequenciaMaxima = contFrequencia[numero];
         }
     }
 
     const modas = [];
     for (const numero in contFrequencia) {
-        if (contFrequencia[numero] === freqMaxima) {
+        if (contFrequencia[numero] === frequenciaMaxima) {
             modas.push(Number(numero));
         }
     }
         
-    if (freqMaxima === 1 && modas.length === vetNumeros.length) {
+    if (frequenciaMaxima === 1 && modas.length === vetNumeros.length) {
       return "Moda não existe";
     }
    

@@ -147,7 +147,7 @@ function exe1(){
         else if ((saldomedio > 200) && (saldomedio <= 300)){
             document.getElementById("valorcredito").innerHTML = saldomedio * 0.2
         }
-        else if (saldomedio <= 200){}
+        else if (saldomedio <= 200){
             document.getElementById("valorcredito").innerHTML = saldomedio * 0.1
         }
     }
@@ -165,7 +165,7 @@ function exe1(){
         else if ((saldomedio > 200) && (saldomedio <= 300)){
             valorcredito = saldomedio * 0.2
         }
-        else if ((saldomedio > ) && (saldomedio <= 200)){
+        else if ((saldomedio > 100 ) && (saldomedio <= 200)){
             valorcredito = saldomedio * 0.1
         }
         else { //saldomedio negativo
@@ -173,7 +173,7 @@ function exe1(){
             return  // saiu da função  
         }
         document.getElementById("valorcredito").innerHTML = `saldomedio ${saldomedio} e crédito ${credito}`
-
+    }
       function exe10(){
         // recuperação de valores
         let custo = Number(document.getElementById("custo").value)
@@ -205,3 +205,4 @@ function exe1(){
         let idade = Number(document.getElementById("idade").value)
         let peso = Number(document.getElementById("peso").value)
         let risco
+      }

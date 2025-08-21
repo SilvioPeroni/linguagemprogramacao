@@ -66,10 +66,12 @@ function sistemaLaboratorio() {
     const totalAcima = totalAcima140(pressao);
     const mediasDia = mediaPorDia(pressao);
  
-    let saida = `Relatório do Laboratório:\n`;
-    saida += `Paciente com maior média de pressão: ${nomeMaiorMedia}\n`;
-    saida += `Total de medições acima de 14.0 mmHg: ${totalAcima}\n`;
-    saida +=`Médias de pressão por dia:\n`;
+    let saida = `
+    Relatório do Laboratório:\n;
+    saida += Paciente com maior média de pressão: ${nomeMaiorMedia}\n;
+    saida += Total de medições acima de 14.0 mmHg: ${totalAcima}\n;
+    saida +=Médias de pressão por dia:\n;
+    `
  
     for (let dia = 0; dia < mediasDia.length; dia++) {
         saida += - `Dia ${dia + 1}: ${mediasDia[dia]} mmHg\n`;

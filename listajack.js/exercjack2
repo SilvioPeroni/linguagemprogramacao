@@ -15,8 +15,8 @@ function interVet() {
   }
 
     console.log("Vetor 1:", vet1);
-  console.log("Vetor 2:", vet2);
-  console.log("Novo vetor intercalado:", interVet);
+    console.log("Vetor 2:", vet2);
+    console.log("Novo vetor intercalado:", interVet);
 }
 
 interVet();
