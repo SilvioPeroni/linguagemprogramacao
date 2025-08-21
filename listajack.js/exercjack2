@@ -7,7 +7,6 @@ function interVet() {
     vet1.push(A$i + 1); 
     vet2.push(B$i + 1); 
   }
-
     let interVet = [];
 
   for (let i = 0; i < 25; i++) {
@@ -15,8 +14,7 @@ function interVet() {
     interVet.push(vet2[i]);
   }
 
-  
-  console.log("Vetor 1:", vet1);
+    console.log("Vetor 1:", vet1);
   console.log("Vetor 2:", vet2);
   console.log("Novo vetor intercalado:", interVet);
 }
