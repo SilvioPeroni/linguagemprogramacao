@@ -1,0 +1,31 @@
+// ordene os números 25 57 48 37 12 92 86 33
+function bubbleSort(vet) {
+  let n = vet.length;
+ // lopping tamanho da lista e não pode ultrapassar a lista
+  // percorrer a lista,
+  // verifica se o valor menor
+  // Se for menor troca com o primeiro
+  // fazer isso até que todos estejam ordenados
+
+  for(let i = 0; i < n - 1; i++){
+    for(let j = 0; j < n -i - 1; j++){
+      if (vet[j] > vet[j + 1]){
+        let temp = vet[j];
+        vet[j] = vet[j+1];
+        vet[j+1] = temp;
+      }
+  
+    }
+  
+  }
+
+
+}
+// programa principal
+vet = []
+for (let i = 0; i < 5; i++){
+  vet[i] = Math.round(Math.random() * (100 - 1) +1);
+}
+console.log(vet)
+bubbleSort(vet)
+console.log(vet)
