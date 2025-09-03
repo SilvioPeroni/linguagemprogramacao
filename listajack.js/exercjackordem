@@ -14,12 +14,11 @@ function bubbleSort(vet) {
         vet[j] = vet[j+1];
         vet[j+1] = temp;
       }
-  
+
     }
   
   }
-
-
+  
 }
 // programa principal
 vet = []
