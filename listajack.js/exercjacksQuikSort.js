@@ -1,0 +1,34 @@
+function quicksort(array, left,right){
+  var i = left
+  var j = right
+  var aux
+  var pivotidx = (left + right)/2
+  var pivot = parseInt(array(pivotidx.toFixed()))
+  // partição
+  while(i<= j){
+    while( parseInt(array[i]) < pivot)
+      i++
+    while(parseInt(array[j]) > pivot)
+      j--
+    if(i <= j){
+      aux = array[i]
+      array[i] = array[j]
+      array[j] = aux
+      i++
+      j--
+    }
+  }
+  // Recursão
+  if(left < j)
+    quicksort(array, left,j)
+  if(i < right)
+    quicksort(array, i, right)
+  return array
+}
+  // **************************
+  // Programa principal
+
+  let vet = [77,44,22,33,99,55,88,0,66,11]
+  quicksort(vet, 0, vet.lenght - 1)
+  console.log(vet)
+
