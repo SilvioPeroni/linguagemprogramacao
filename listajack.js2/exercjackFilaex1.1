@@ -1,0 +1,22 @@
+function interFilas(fila1, fila2) {
+  const resultado = [];
+  const maxLength = Math.max(fila1.length, fila2.length);
+
+  for (let i = 0; i < maxLength; i++) {
+    if (i < fila1.length) {
+      resultado.push(fila1[i]);
+    }
+    if (i < fila2.length) {
+      resultado.push(fila2[i]);
+    }
+  }
+
+  return resultado;
+}
+
+const filaA = ["A1", "A2", "A3"];
+const filaB = ["B1", "B2", "B3", "B4"];
+
+const filaIntercalada = intercalarFilas(filaA, filaB);
+console.log(filaIntercalada);
+// Saída: ["A1", "B1", "A2", "B2", "A3", "B3", "B4"]

@@ -1,0 +1,26 @@
+function inverPalavraPilha(texto) {
+  const palavras = texto.split(" "); 
+  const resultado = [];
+
+  for (let palavra of palavras) {
+    const pilha = [];
+
+    //  coloca cada letra na pilha
+    for (let letra of palavra) {
+      pilha.push(letra);
+    }
+
+    // remove as letras da pilha para inverter
+    let palavraInvertida = "";
+    while (pilha.length > 0) {
+      palavraInvertida += pilha.pop();
+    }
+
+    resultado.push(palavraInvertida); 
+  }
+
+  return resultado.join(" "); 
+}
+const texto = "DESIREE AMOR VIDA";
+const invertido = inverterPalavrasComPilha(texto);
+console.log(invertido);

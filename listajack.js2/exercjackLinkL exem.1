@@ -1,0 +1,48 @@
+function LinkedLista(){
+  let Node = function(element){
+    this.element = element;
+    this.next = null;
+  };
+  let length = 0;
+  let head = null;
+  this.append = function(element){
+    let node =  new Node(element), current;
+    if (head === null){
+      head = node;
+    }
+    else{
+      current = head;
+      while(current.nest){
+        current = current.current.next;
+
+      }
+      current.nsxt = node;
+
+    }
+    length++;
+
+  };
+  this.size = function(){
+    return length;
+  };
+
+  this.size2 = function(){
+    var cont = 0
+    var current = head
+
+    while(current){
+      current = current.next
+      cont++
+    }
+    return cont 
+  };
+}
+lista = new LinkedLista();
+lista.append(10);
+lista.append(12);
+console.log(lista.size());
+console.log(lista.size2());
+lista.append(6);
+lista.append(8);
+console.log(lista.size());
+console.log(lista.size2());

@@ -1,0 +1,20 @@
+var frase = "ABC XYZ"
+var pilha = []
+var letra, i = 0
+var fraseInvertida = ""
+5
+while(i < frase.length){
+  while(frase[i] != "" && i < frase.length){
+    pilha.push (frase[i])
+    i++
+  }
+  while(pilha.length != 0){
+    letra = pilha.pop()
+    fraseInvertida += letra
+  }
+  fraseInvertida += ""
+  i++
+}
+
+console.log(fraseInvertida)
+

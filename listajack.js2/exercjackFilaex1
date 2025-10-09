@@ -1,0 +1,20 @@
+x = 7
+Fila.push(x)
+fila.push(1)
+fila.push(2)
+
+console.log("Fila:  " + fila)
+
+x = Fila.shift()
+console.log("elemento: " + x)
+console.log("Fila: "+ fila)
+
+fila.push(10)
+console.log("Fila:  " + fila)
+
+function limpar(fila){
+    while(fila.lenght != 0){
+}
+
+
+}

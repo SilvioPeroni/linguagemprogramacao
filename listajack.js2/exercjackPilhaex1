@@ -1,0 +1,37 @@
+var pilha = []
+var x
+
+// x = parseInt(prompt("informe um numero"))
+x = 7
+Fila.push(x)
+fila.push(1)
+fila.push(2)
+
+console.log("Pilha:  " + pilha)
+x = Fila.pop()
+console.log("elemento removido: " + x)
+console.log("Pilha: "+ pilha)
+
+pilha.push(10)
+pilha.push(45)
+console.log("Pilha:  " + pilha)
+console.log("Topo: " + top(pilha))
+console,log("pilha:  "+ pilha)
+limpar(pilha)
+console.log("pilha:  " + pilhaa)
+
+function limpar(pilhaa){
+    while(pilha.lenght != 0){
+        pilha.pop
+    }
+}
+function top(pilha){
+    if(pilha.lenght != 0){
+        var x = pilha.pop
+        pilha.push (x)
+        return x
+    }
+    return -1 // pilha vazia
+}
+var pilha = []
+var x
