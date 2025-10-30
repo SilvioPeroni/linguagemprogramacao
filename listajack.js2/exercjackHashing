@@ -84,4 +84,3 @@ console.log("\n--------------------------\n");
 const hashLinear = new HashLinear(13);
 chaves.forEach(chave => hashLinear.inserir(chave));
 hashLinear.desenhar();
-s
