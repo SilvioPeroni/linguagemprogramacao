@@ -35,6 +35,13 @@ function LinkedLista(){
     };
     return string
   };
+  this.removeFirst = function() {
+  if (head === null) return null; // Lista vazia
+  let removed = head.elemento;
+  head = head.next;
+  length--;
+  return removed;
+};
 }
 
 lista = new LinkedLista();
@@ -44,6 +51,7 @@ console.log(lista.size());
 console.log(lista.size2());
 console.log('Lista: ', lista.toString())
 console.log ('......')
+console.log(removeFirst)
 lista.append(6);
 lista.append(8);
 console.log(lista.size());

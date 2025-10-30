@@ -1,0 +1,87 @@
+class No {
+  constructor(valor) {
+    this.valor = valor;
+    this.proximo = null;
+  }
+}
+
+class HashEncadeada {
+  constructor(tamanho) {
+    this.tabela = new Array(tamanho).fill(null);
+    this.tamanho = tamanho;
+  }
+
+  funcaoHash(chave) {
+    return chave.charCodeAt(0) % this.tamanho;
+  }
+
+  inserir(chave) {
+    const indice = this.funcaoHash(chave);
+    const novoNo = new No(chave);
+
+    if (this.tabela[indice] === null) {
+      this.tabela[indice] = novoNo;
+    } else {
+      let atual = this.tabela[indice];
+      while (atual.proximo !== null) {
+        atual = atual.proximo;
+      }
+      atual.proximo = novoNo;
+    }
+  }
+
+  desenhar() {
+    console.log("Tabela Hash (Encadeada):");
+    for (let i = 0; i < this.tamanho; i++) {
+      let linha = `${i} → `;
+      let atual = this.tabela[i];
+      while (atual !== null) {
+        linha += `${atual.valor} → `;
+        atual = atual.proximo;
+      }
+      linha += "null";
+      console.log(linha);
+    }
+  }
+}
+
+class HashLinear {
+  constructor(tamanho) {
+    this.tabela = new Array(tamanho).fill(null);
+    this.tamanho = tamanho;
+  }
+
+  funcaoHash(chave) {
+    return chave.charCodeAt(0) % this.tamanho;
+  }
+
+  inserir(chave) {
+    let indice = this.funcaoHash(chave);
+    while (this.tabela[indice] !== null) {
+      indice = (indice + 1) % this.tamanho;
+    }
+    this.tabela[indice] = chave;
+  }
+
+  desenhar() {
+    console.log("Tabela Hash (Linear):");
+    for (let i = 0; i < this.tamanho; i++) {
+      console.log(`${i} → ${this.tabela[i] !== null ? this.tabela[i] : "null"}`);
+    }
+  }
+}
+
+const chaves = ["N", "I", "V", "O", "Z", "U", "A", "E", "F", "R", "B", "L"];
+
+// Caso A: Encadeada
+const hashEncadeada = new HashEncadeada(7);
+chaves.forEach(chave => hashEncadeada.inserir(chave));
+hashEncadeada.desenhar();
+
+console.log("\n--------------------------\n");
+
+// Caso B: Linear
+const hashLinear = new HashLinear(13);
+chaves.forEach(chave => hashLinear.inserir(chave));
+hashLinear.desenhar();
+s

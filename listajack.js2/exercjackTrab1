@@ -1,0 +1,24 @@
+function verificarExpressaoBalanceada(expressao) {
+  const pilha = [];
+  const pares = {
+    ')': '(',
+    ']': '[',
+    '}': '{'
+  };
+
+  for (let char of expressao) {
+    if (char === '(' || char === '[' || char === '{') {
+      pilha.push(char); // Abre: empilha
+    } else if (char === ')' || char === ']' || char === '}') {
+      if (pilha.length === 0 || pilha.pop() !== pares[char]) {
+        return false; // Fecha sem correspondente ou fora de ordem
+      }
+    }
+  }
+
+  return pilha.length === 0; // Se pilha vazia, está balanceado
+}
+console.log(verificarExpressaoBalanceada("2 * (3 + [5 - {2}])")); 
+console.log(verificarExpressaoBalanceada("2 * (3 + [5 - {2}]"));  
+console.log(verificarExpressaoBalanceada("{[(2+3)*5]}"));         
+console.log(verificarExpressaoBalanceada("[(])"));                

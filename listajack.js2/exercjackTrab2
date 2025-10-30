@@ -1,0 +1,51 @@
+class Node {
+  constructor(valor) {
+    this.valor = valor;
+    this.proximo = null;
+  }
+}
+
+function jpLista(n, m) {
+  // Criar lista 
+  let inicio = new Node(1);
+  let atual = inicio;
+  for (let i = 2; i <= n; i++) {
+    atual.proximo = new Node(i);
+    atual = atual.proximo;
+  }
+  atual.proximo = inicio; 
+
+  // Eliminação
+  let anterior = atual;
+  atual = inicio;
+  while (atual.proximo !== atual) {
+    for (let i = 1; i < m; i++) {
+      anterior = atual;
+      atual = atual.proximo;
+    }
+    anterior.proximo = atual.proximo; 
+    atual = atual.proximo;
+  }
+
+  return atual.valor;
+}
+console.log("Vetor:", jpVetor(7, 3));      
+console.log("Lista:", jpLista(7, 3));  
+
+*-------------------------------------------------------*
+function josephusArray(n, m) {
+    if (n <= 0 || m <= 0) return 0;
+    
+    let pessoas = Array.from({ length: n }, (_, i) => i + 1);  // Array: [1, 2, ..., n]
+    let indice = 0;  // Começa em 0 (pessoa 1)
+    
+    while (pessoas.length > 1) {
+        // Calcula o índice da M-ésima pessoa (roda o círculo)
+        indice = (indice + m - 1) % pessoas.length;
+        // Remove a pessoa
+        pessoas.splice(indice, 1);
+        // O próximo começa do mesmo índice (já ajustado pelo %)
+    }
+    
+    return pessoas[0];
+}

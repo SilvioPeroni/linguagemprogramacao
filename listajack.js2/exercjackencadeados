@@ -1,0 +1,124 @@
+class No {
+  constructor(valor) {
+    this.valor = valor;
+    this.proximo = null;
+  }
+}
+
+// Definição da lista encadeada
+class ListaEncadeada {
+  constructor() {
+    this.inicio = null;
+  }
+
+  // Adiciona no final
+  adicionar(valor) {
+    const novoNo = new No(valor);
+    if (this.inicio === null) {
+      this.inicio = novoNo;
+    } else {
+      let atual = this.inicio;
+      while (atual.proximo !== null) {
+        atual = atual.proximo;
+      }
+      atual.proximo = novoNo;
+    }
+  }
+
+  // a) Mostrar todos os elementos
+  mostrar() {
+    if (this.inicio === null) {
+      console.log("Lista vazia.");
+      return;
+    }
+
+    let atual = this.inicio;
+    let elementos = [];
+    while (atual !== null) {
+      elementos.push(atual.valor);
+      atual = atual.proximo;
+    }
+    console.log("Elementos da lista:", elementos.join(" -> "));
+  }
+
+  // b) Remover o primeiro elemento
+  removerPrimeiro() {
+    if (this.inicio === null) {
+      console.log("Lista já está vazia.");
+      return;
+    }
+    this.inicio = this.inicio.proximo;
+    console.log("Primeiro elemento removido.");
+  }
+
+  // c) Inserir no início da lista
+  inserirNoInicio(valor) {
+    const novoNo = new No(valor);
+    novoNo.proximo = this.inicio;
+    this.inicio = novoNo;
+    console.log("Elemento inserido no início.");
+  }
+
+  // d) Retornar posição de um elemento
+  buscarPosicao(valor) {
+    let atual = this.inicio;
+    let posicao = 0;
+
+    while (atual !== null) {
+      if (atual.valor === valor) {
+        return posicao;
+      }
+      atual = atual.proximo;
+      posicao++;
+    }
+
+    return -1; // Não encontrado
+  }
+
+  // e) Remover elemento de uma posição específica
+  removerNaPosicao(posicao) {
+    if (posicao < 0 || this.inicio === null) {
+      console.log("Posição inválida ou lista vazia.");
+      return;
+    }
+
+    if (posicao === 0) {
+      this.removerPrimeiro();
+      return;
+    }
+
+    let atual = this.inicio;
+    let anterior = null;
+    let contador = 0;
+
+    while (atual !== null && contador < posicao) {
+      anterior = atual;
+      atual = atual.proximo;
+      contador++;
+    }
+
+    if (atual === null) {
+      console.log("Posição fora dos limites da lista.");
+      return;
+    }
+
+    anterior.proximo = atual.proximo;
+    console.log(`Elemento na posição ${posicao} removido.`);
+  }
+}
+
+const lista = new ListaEncadeada();
+
+lista.adicionar(10);
+lista.adicionar(20);
+lista.adicionar(30);
+lista.mostrar(); // 10 -> 20 -> 30
+
+lista.inserirNoInicio(5);
+lista.mostrar(); // 5 -> 10 -> 20 -> 30
+
+console.log("Posição do 20:", lista.buscarPosicao(20)); // 2
+console.log("Posição do 99:", lista.buscarPosicao(99)); // -1
+
+lista.removerNaPosicao(1); // Remove 10
+lista.mostrar(); // 5 -> 20 -> 30
